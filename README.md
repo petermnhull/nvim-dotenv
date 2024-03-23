@@ -10,7 +10,7 @@ For Lazy:
 
 ```
 return {
-  'petermnhull/nvim-dotenv.nvim',
+  'petermnhull/nvim-dotenv',
   opts = {}
 }
 ```
