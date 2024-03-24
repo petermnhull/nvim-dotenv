@@ -23,6 +23,5 @@ return {
 
 Some ideas to make this into a proper plugin.
 
-- Let client set key mapping instead.
 - Option for specifying which `.env` file to use.
 - Option for running the function on start up.
