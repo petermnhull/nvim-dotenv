@@ -2,7 +2,7 @@
 
 Tiny Neovim plugin for setting env vars from a `test.env` file in the root directory of the project you're working on, originally intended to use with [neotest](https://github.com/nvim-neotest/neotest).
 
-Run `<Space>ts` to set the environment variables.
+Adds the command `SetEnv`.
 
 ## Installation
 
@@ -10,8 +10,12 @@ For Lazy:
 
 ```
 return {
-  'petermnhull/nvim-dotenv',
-  opts = {}
+	"petermnhull/nvim-dotenv",
+	config = function()
+		require("nvim-dotenv").setup({})
+
+		vim.keymap.set("n", "<leader>ts", "<Cmd>SetEnv<CR>", { desc = "[s]et env from test.env file" })
+	end,
 }
 ```
 
