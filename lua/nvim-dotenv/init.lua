@@ -49,13 +49,13 @@ local function set_env_from_file()
 	print("loaded env vars from test.env")
 end
 
-M.setup = function(opts)
-	vim.keymap.set(
-		"n",
-		"<leader>ts",
-		set_env_from_file,
-		{ noremap = true, silent = true, desc = "[s]et env from test.env file" }
-	)
+local function setup_commands()
+	local command = vim.api.nvim_create_user_command
+	command("SetEnv", set_env_from_file, {})
+end
+
+function M.setup(conf)
+	setup_commands()
 end
 
 return M
